@@ -1467,3 +1467,45 @@ a:hover {
     display: block;
   }
 }
+
+.petition-transcript {
+  margin-top: 36px;
+}
+.petition-transcript details {
+  border: 1px solid #ffffff60;
+}
+.petition-transcript summary {
+  padding: 20px 24px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.petition-transcript-body {
+  background: white;
+  color: var(--ink);
+  padding: 28px;
+}
+.petition-transcript-body h3 {
+  margin-top: 24px;
+}
+.petition-transcript blockquote {
+  margin: 24px 0;
+  padding-left: 22px;
+  border-left: 3px solid var(--green);
+}
+.petition-transcript blockquote p {
+  font-size: 0.95rem;
+}
+.petition-transcript .fine-print {
+  margin-bottom: 0;
+}
+.petition-transcript a:hover {
+  color: var(--green);
+}
+@media (max-width: 760px) {
+  .petition-transcript-body {
+    padding: 20px;
+  }
+  .petition-transcript blockquote {
+    padding-left: 14px;
+  }
+}
