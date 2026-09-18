@@ -1,0 +1,51 @@
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+html {
+    scroll-padding-top: 9rem;
+}
+
+/* Expanded mobile navigation must not cover the destination after a jump. */
+@media (max-width: 1279px) {
+    nav:has(.mobile-nav[open]) {
+        position: relative;
+    }
+}
+
+@media (min-width: 1280px) {
+    html {
+        scroll-padding-top: 6rem;
+    }
+}
+
+:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 4px;
+}
+
+.skip-link {
+    position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 100;
+    padding: 0.75rem 1rem;
+    background: white;
+    color: #004d26;
+    transform: translateY(-200%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.scroll-smooth {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
