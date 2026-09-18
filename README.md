@@ -6,7 +6,7 @@ Static campaign website hosted on GitHub Pages at https://protectpleasantville.o
 
 There is no build step, runtime CSS framework, external font, or third-party script. HTML, CSS, and JavaScript are served directly. Form submissions use the existing Formspree endpoint.
 
-- `index.html`: action center, September meeting account, evidence hub, protest information, contact draft, resources, and campaign request form.
+- `index.html`: action center, September meeting account, evidence hub, public petition, contact draft, resources, and campaign request form.
 - `the-facts.html`: standalone evidence hub. Keep its five evidence panels in sync with the homepage.
 - `site.css`: shared responsive styling, focus states, reduced motion, and print styles.
 - `site.js`: mobile menu behavior, linked accordions, request intent, editable email draft, clipboard, and print expansion.
@@ -19,7 +19,7 @@ The flyer PDF is exported from `assets/campaign-flyer.html` using Chrome with ba
 
 ## Content that needs organizer input
 
-1. Supply the approved protest PDF, filing deadline, delivery instructions, and parcel eligibility process. The petition CTA currently leads to an explicitly labeled packet-notification request; it does not collect legal signatures.
+1. The public petition links directly to the organizer-supplied Change.org page. The paper protest petition is separate and is not promoted as an online signup.
 2. Supply the September 14 resolution, adopted minutes, or timestamped recording to substantiate the campaign’s 4–1 vote and meeting account. These statements are attributed to the campaign on the page.
 3. Supply the October 26 rezoning hearing/vote notice and remote participation link. The official Village schedule confirms a Board meeting, not the specific hearing or vote. The site links to the official agenda and makes that distinction.
 4. Confirm who fulfills lawn-sign requests. They use the existing campaign Formspree endpoint with `interest=lawn-sign`; availability is not guaranteed.

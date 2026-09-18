@@ -21,4 +21,6 @@ The supplied redesign brief sets the campaign direction. The implementation remo
 
 ## Assets and operational details still needed
 
-No approved statutory petition PDF was supplied. The page clearly states that the packet is pending and offers notification through the existing Formspree endpoint. It never treats the web form as a legal petition signature. A printable campaign flyer and lawn-sign artwork are provided; lawn-sign fulfillment needs organizer follow-through.
+The organizer replaced the paper-protest promotion with the public [Change.org petition](https://www.change.org/p/defer-final-action-on-the-campus-drive-rezoning-7a6144cc-f314-4ae5-8ac4-41b926bbaa5f). Navigation, hero buttons, action cards, the petition module, resource links, and the printable flyer now direct visitors to that petition. The `signed=true` query parameter was removed from the shared URL. The separate paper protest is mentioned only to distinguish its eligibility requirements; the packet-notification form option and supermajority callout were removed.
+
+The full petition text was not included in the follow-up message, and Change.org could not be retrieved during this update. The site uses the supplied title and directs readers to the full statement on Change.org without inventing its contents. Lawn-sign fulfillment still needs organizer follow-through.
