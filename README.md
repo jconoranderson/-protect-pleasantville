@@ -38,3 +38,7 @@ The September 2026 redesign was checked in Chrome at 320, 375, 768, 1024, 1280, 
 ## Publishing
 
 Remote: https://github.com/jconoranderson/-protect-pleasantville.git. Push approved commits to `main`, then verify the GitHub Pages deployment and both live HTML pages, CSS/JS, and downloadable assets. A successful push can precede the public update by a minute or more.
+
+## Visual identity
+
+The site uses the original Pleasantville palette from commit `956c99e`: green `#004d26`, hover green `#003319`, black, white, and light gray `#f3f4f6`. Preserve the green wordmark, black hero with white-and-green headline treatment, rounded white cards, and green buttons when extending the design. The current content and Change.org petition remain independent of these styling choices.
