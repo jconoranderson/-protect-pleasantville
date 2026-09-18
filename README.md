@@ -1,34 +1,40 @@
 # Protect Pleasantville
 
-Static website for https://protectpleasantville.org, hosted on GitHub Pages.
+Static campaign website hosted on GitHub Pages at https://protectpleasantville.org.
 
-## Files
+## Editing and preview
 
-- `index.html`: homepage and Formspree signup form.
-- `the-facts.html`: project concerns and ways to get involved.
-- `site.css`: shared accessibility and navigation styles.
-- `CNAME`: custom domain; preserve this file when publishing.
-- `social_thumbnail_v2.png`: social sharing image.
+There is no build step, runtime CSS framework, external font, or third-party script. HTML, CSS, and JavaScript are served directly. Form submissions use the existing Formspree endpoint.
 
-There is no build step. Both pages currently load Tailwind CSS from its runtime CDN, Google Fonts, and (on the homepage) an Unsplash image.
+- `index.html`: action center, September meeting account, evidence hub, protest information, contact draft, resources, and campaign request form.
+- `the-facts.html`: standalone evidence hub. Keep its five evidence panels in sync with the homepage.
+- `site.css`: shared responsive styling, focus states, reduced motion, and print styles.
+- `site.js`: mobile menu behavior, linked accordions, request intent, editable email draft, clipboard, and print expansion.
+- `assets/`: printable campaign flyer (HTML and PDF), scalable lawn-sign SVG, and social card PNG.
+- `CNAME`: custom domain; preserve when publishing.
 
-## Local preview
+Run `python3 -m http.server 8000` and open http://localhost:8000. Run `python3 scripts/check_site.py`, `node --check site.js`, and `git diff --check` before publishing.
 
-From the repository root, run `python3 -m http.server 8000`, then open http://localhost:8000.
+The flyer PDF is exported from `assets/campaign-flyer.html` using Chrome with backgrounds enabled, Letter paper, and no margins. Its wording intentionally does not promise a confirmed hearing or vote. Lawn-sign artwork is a 24 × 18-inch SVG; a printer may need outlined text and bleed adjustments.
 
-Before publishing, check both pages at mobile, tablet, and desktop widths; open the mobile menu and follow section links; navigate with the keyboard; and verify local links and form validation. Do not submit test subscriptions to the live Formspree endpoint without coordinating with the site owner.
+## Content that needs organizer input
+
+1. Supply the approved protest PDF, filing deadline, delivery instructions, and parcel eligibility process. The petition CTA currently leads to an explicitly labeled packet-notification request; it does not collect legal signatures.
+2. Supply the September 14 resolution, adopted minutes, or timestamped recording to substantiate the campaign’s 4–1 vote and meeting account. These statements are attributed to the campaign on the page.
+3. Supply the October 26 rezoning hearing/vote notice and remote participation link. The official Village schedule confirms a Board meeting, not the specific hearing or vote. The site links to the official agenda and makes that distinction.
+4. Confirm who fulfills lawn-sign requests. They use the existing campaign Formspree endpoint with `interest=lawn-sign`; availability is not guaranteed.
+5. Attach dated exports and assumptions for the proposed 895 daily trips, DOT count, crash totals, soil ratings, and original EAF answers. The site labels these campaign scenarios/questions rather than verified agency findings.
+
+## Source and wording decisions
+
+See `CONTENT_REVIEW.md` for references and corrections to the supplied brief. In particular, the protest threshold concerns land area, the latest applicant memorandum describes an occupied second office building, and a protest does not permanently bar future applications.
+
+The email action addresses the Mayor and four Trustees in the official directory and copies the Clerk. No messages are sent automatically. Form submissions remain standard HTML POSTs to Formspree; delivery and account settings must be checked by the account owner.
+
+## Verification
+
+The September 2026 redesign was checked in Chrome at 320, 375, 768, 1024, 1280, and 1440 pixels; keyboard navigation, mobile menus, accordions and deep links, editable email links, clipboard behavior, request selection, no-JavaScript fallback, and an intercepted form POST were exercised. Accessibility was checked with axe-core against WCAG A/AA rules. No live subscription or email was sent during testing.
 
 ## Publishing
 
-The GitHub remote is https://github.com/jconoranderson/-protect-pleasantville.git. The public site responds from GitHub Pages. Confirm the publishing branch and folder under GitHub **Settings → Pages** before the first deployment; the unauthenticated Pages API does not expose these settings.
-
-1. Review the changes with `git diff` and run `git diff --check`.
-2. Commit the approved website files.
-3. Push to the configured publishing branch (the current local branch is `main`).
-4. Check the Pages deployment status in GitHub, then verify both live pages and the custom domain after deployment completes.
-
-## Remaining review items
-
-- The project claims, quotations, figures, and “Important Update” lack primary-source links and dates. Their factual accuracy and currency have not been verified in this technical review.
-- Replace the Tailwind runtime CDN with a generated, versioned stylesheet in a future performance/reliability update.
-- Confirm Formspree delivery and the configured post-submission redirect with the account owner. This review does not submit personal information or verify inbox delivery.
+Remote: https://github.com/jconoranderson/-protect-pleasantville.git. Push approved commits to `main`, then verify the GitHub Pages deployment and both live HTML pages, CSS/JS, and downloadable assets. A successful push can precede the public update by a minute or more.
